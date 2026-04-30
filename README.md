@@ -25,6 +25,7 @@ The system follows the standard Playfair Cipher steps:
    
 
 ## Preview
+![Interface Preview](Output.jpg)
 
 
 ## Developer
