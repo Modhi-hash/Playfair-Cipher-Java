@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 
 package com.mycompany.playfairmaingui;
 import javax.swing.*;
@@ -22,10 +18,9 @@ public class PlayfairMainGUI extends JFrame {
     private JButton EncryptButton, DecryptButton;
 
     public PlayfairMainGUI() {
+      
         setTitle("Playfair Cipher System");
       
-       
-
         Color bgColor = new Color(30, 0, 60); 
 
         JPanel mainPanel = new JPanel(new GridBagLayout());
@@ -38,7 +33,7 @@ public class PlayfairMainGUI extends JFrame {
         gbc.gridx = 0;
         gbc.insets = new Insets(7, 0, 7, 0);
 
-       // Header Image
+      
         gbc.gridy = 0;
         try {
             URL imageUrl = getClass().getResource("/playfair.png");
@@ -48,7 +43,7 @@ public class PlayfairMainGUI extends JFrame {
             }
         } catch (Exception e) {}
 
-        // Title
+       
         gbc.gridy = 1;
         gbc.insets = new Insets(15, 0, 15, 0);
         JLabel lblTitle = new JLabel("PLAYFAIR CIPHER", JLabel.CENTER);
@@ -56,7 +51,7 @@ public class PlayfairMainGUI extends JFrame {
         lblTitle.setForeground(Color.WHITE);
         mainPanel.add(lblTitle, gbc);
 
-        // KEY
+       
         gbc.gridy = 2;
         gbc.insets = new Insets(5, 0, 5, 0);
         JLabel l1 = new JLabel("KEY:");
@@ -67,7 +62,7 @@ public class PlayfairMainGUI extends JFrame {
         gbc.gridy = 3;
         mainPanel.add(txtKey, gbc);
 
-        // PLAINTEXT
+       
         gbc.gridy = 4;
         JLabel l2 = new JLabel("PLAINTEXT:");
         l2.setForeground(Color.WHITE);
@@ -78,7 +73,7 @@ public class PlayfairMainGUI extends JFrame {
         gbc.gridy = 5;
         mainPanel.add(new JScrollPane(txtInput), gbc);
 
-        // Buttons 
+        
         gbc.gridy = 6;
         gbc.insets = new Insets(20, 0, 20, 0);
         JPanel btnPanel = new JPanel(new GridLayout(1, 2, 15, 0));
@@ -87,10 +82,10 @@ public class PlayfairMainGUI extends JFrame {
         EncryptButton = new JButton("ENCRYPT");
         DecryptButton = new JButton("DECRYPT");
 
-        // Color
+       
         Color lightPurple = new Color(150, 80, 255);
         Color darkPurple = new Color(100, 30, 200);
-        // Glow Effect
+        
         applyButtonStyle(EncryptButton, lightPurple, Color.WHITE);
         applyButtonStyle(DecryptButton, darkPurple, Color.WHITE);
 
@@ -98,7 +93,7 @@ public class PlayfairMainGUI extends JFrame {
         btnPanel.add(DecryptButton);
         mainPanel.add(btnPanel, gbc);
 
-        // RESULT
+      
         gbc.gridy = 7;
         gbc.insets = new Insets(5, 0, 5, 0);
         JLabel l3 = new JLabel("RESULT:");
@@ -112,7 +107,7 @@ public class PlayfairMainGUI extends JFrame {
         gbc.gridy = 8;
         mainPanel.add(new JScrollPane(txtOutput), gbc);
 
-        // Actions
+       
         EncryptButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) { handleAction(true); }
         });
@@ -130,7 +125,7 @@ public class PlayfairMainGUI extends JFrame {
         btn.setContentAreaFilled(false);
         btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
-        // Glow effect on Hover
+      
         btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent e) { btn.setBackground(bg.brighter()); }
             public void mouseExited(java.awt.event.MouseEvent e) { btn.setBackground(bg); }
